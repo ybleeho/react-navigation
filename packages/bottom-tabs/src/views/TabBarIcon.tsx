@@ -24,6 +24,7 @@ type Props = {
     size: number;
   }) => React.ReactNode;
   style: StyleProp<ViewStyle>;
+  focused: boolean;
 };
 
 export default function TabBarIcon({
@@ -36,6 +37,7 @@ export default function TabBarIcon({
   inactiveTintColor,
   renderIcon,
   style,
+  focused
 }: Props) {
   const size = 25;
 
@@ -47,18 +49,18 @@ export default function TabBarIcon({
     >
       <View style={[styles.icon, { opacity: activeOpacity }]}>
         {renderIcon({
-          focused: true,
+          focused: focused,
           size,
           color: activeTintColor,
         })}
       </View>
-      <View style={[styles.icon, { opacity: inactiveOpacity }]}>
+      {/* <View style={[styles.icon, { opacity: inactiveOpacity }]}>
         {renderIcon({
           focused: false,
           size,
           color: inactiveTintColor,
         })}
-      </View>
+      </View> */}
       <Badge
         visible={badge != null}
         style={[

@@ -241,12 +241,13 @@ export default function BottomTabBarItem({
         horizontal={horizontal}
         badge={badge}
         badgeStyle={badgeStyle}
-        activeOpacity={activeOpacity}
-        inactiveOpacity={inactiveOpacity}
+        activeOpacity={1}
+        inactiveOpacity={1}
         activeTintColor={activeTintColor}
         inactiveTintColor={inactiveTintColor}
         renderIcon={icon}
         style={iconStyle}
+        focused={focused}
       />
     );
   };
